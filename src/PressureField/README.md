@@ -1,0 +1,1 @@
+Les deux fichiers python permettent de calculer et d'archiver puis d'afficher les points pressions dans un cube de dimension variable. Permet d'observer les points d'équilibre stable généré par les transducteurs.

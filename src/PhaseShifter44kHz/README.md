@@ -1,0 +1,1 @@
+Permet de générer un signal créneaux de 44kHz sur les pins 9 et 10 de la UNO. Les pins 4 et 5 sont utilisés commes des boutons pour un réglage manuel de la phase. La console de l'IDE peut aussi servir pour demander une phase précise.
