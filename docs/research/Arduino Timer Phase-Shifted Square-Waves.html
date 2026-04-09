@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://runtimemicro.com/Projects/Arduino-Timer-Phase-Shifted-Square-Waves -->
+<html lang="en" dir="ltr" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style media="screen"></style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="https://runtimemicro.com/sites/all/themes/responsive_blog/favicon.ico" type="image/vnd.microsoft.icon">
+<meta name="description" content="Get phase-shifted square-waves from your Arduino Timer. Runtime adjustable code and schematic appears in this article. Reproduce with Nano, Uno or 2560.">
+<meta name="abstract" content="Fully documented Phase-Shifted Square-Waves project using Arduino Nano, Uno or Mega 2560.">
+<meta name="keywords" content="Phase-Shifted Square Waves, Arduino, Timer">
+<meta name="generator" content="Drupal 7 (https://www.drupal.org)">
+<link rel="image_src" href="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shifted-Square-Waves.jpg">
+<link rel="canonical" href="https://runtimemicro.com/Projects/Arduino-Timer-Phase-Shifted-Square-Waves">
+<link rel="shortlink" href="https://runtimemicro.com/node/238">
+<title>Arduino Timer Phase-Shifted Square-Waves</title>
+<link type="text/css" rel="stylesheet" href="./Arduino Timer Phase-Shifted Square-Waves_files/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Arduino Timer Phase-Shifted Square-Waves_files/css_LNFWCadJXjszADlL3JW8KTAo07Avl-NlJc3AAQNy6E0.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Arduino Timer Phase-Shifted Square-Waves_files/css_NCOSdpoQnWWQHVcfG2o2skDLf8YSjSAlOAadPoELzbo.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Arduino Timer Phase-Shifted Square-Waves_files/jquery.qtip.min.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Arduino Timer Phase-Shifted Square-Waves_files/css_RrnJj7m3Oz6UwmDPmEkSPR9WiX1wzWmh4QgRbZzk1oM.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Arduino Timer Phase-Shifted Square-Waves_files/css_7b59KMA2Q8IjBqRrEEiXS6hKeyRxDwQYi1_-99Til5I.css" media="all">
+<script type="text/javascript" src="./Arduino Timer Phase-Shifted Square-Waves_files/js_8DueemWpz5iqA7eOhZBvMqPDjDSkPo6Y5x6Ze0Tg65Q.js.download"></script>
+<script type="text/javascript" src="./Arduino Timer Phase-Shifted Square-Waves_files/js_RulCPHj8aUtatsXPqRSFtJIhBjBSAzFXZzADEVD4CHY.js.download"></script>
+<script type="text/javascript" src="./Arduino Timer Phase-Shifted Square-Waves_files/js_gHk2gWJ_Qw_jU2qRiUmSl7d8oly1Cx7lQFrqcp3RXcI.js.download"></script>
+<script type="text/javascript" src="./Arduino Timer Phase-Shifted Square-Waves_files/jquery.qtip.min.js.download"></script>
+<script type="text/javascript" src="./Arduino Timer Phase-Shifted Square-Waves_files/js_iwG0cjLATIbr5C2Hp9ZVIC18sYLjpmPauj4GUO-fa4Y.js.download"></script>
+<script type="text/javascript" src="./Arduino Timer Phase-Shifted Square-Waves_files/js_Y9qAQ_aUVVAWt11FYldlmyby8xdq_pWE7BbnEDjHMWA.js.download"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"responsive_blog","theme_token":"Fv3FyDk1mJqg5pO8G3jCakI9_DSKjFoKoPWvD44xfw4","js":{"0":1,"sites\/all\/modules\/eu_cookie_compliance\/js\/eu_cookie_compliance.min.js":1,"modules\/statistics\/statistics.js":1,"https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.6.4\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/eu_cookie_compliance\/js\/jquery.cookie-1.4.1.min.js":1,"misc\/form-single-submit.js":1,"sites\/all\/modules\/entityreference\/js\/entityreference.js":1,"\/\/cdn.jsdelivr.net\/qtip2\/3.0.3\/jquery.qtip.min.js":1,"sites\/all\/modules\/antibot\/js\/antibot.js":1,"sites\/all\/modules\/qtip\/js\/qtip.js":1,"sites\/all\/themes\/responsive_blog\/js\/main-menu.js":1,"sites\/all\/themes\/responsive_blog\/js\/pngfix.min.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"\/\/cdn.jsdelivr.net\/qtip2\/3.0.3\/jquery.qtip.min.css":1,"sites\/all\/modules\/qtip\/css\/qtip.css":1,"sites\/all\/modules\/eu_cookie_compliance\/css\/eu_cookie_compliance.css":1,"public:\/\/ctools\/css\/2ee3e38ecac10682ab3065ab2b80cc6d.css":1,"sites\/all\/themes\/responsive_blog\/css\/dark.css":1,"sites\/all\/themes\/responsive_blog\/style.css":1}},"instances":"{\u0022default\u0022:{\u0022content\u0022:{\u0022text\u0022:\u0022\u0022},\u0022style\u0022:{\u0022tip\u0022:false,\u0022classes\u0022:\u0022\u0022},\u0022position\u0022:{\u0022at\u0022:\u0022bottom right\u0022,\u0022adjust\u0022:{\u0022method\u0022:\u0022\u0022},\u0022my\u0022:\u0022top left\u0022,\u0022viewport\u0022:false},\u0022show\u0022:{\u0022event\u0022:\u0022mouseenter \u0022},\u0022hide\u0022:{\u0022event\u0022:\u0022mouseleave \u0022}}}","qtipDebug":"{\u0022leaveElement\u0022:0}","eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":1,"popup_agreed_enabled":0,"popup_hide_agreed":1,"popup_clicking_confirmation":1,"popup_scrolling_confirmation":0,"popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--default\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch3\u003EThis Website uses\u00a0Cookies\u00a0to enhance\u00a0User Experience\u003C\/h3\u003E\u003Ch3\u003EBy clicking any Link\u00a0you\u00a0give\u00a0Consent\u00a0to Set Cookies...\u003C\/h3\u003E          \u003C\/div\u003E\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003E    ACCEPT   \u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--default\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022\u003E\n                \u003C\/div\u003E\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003E    ACCEPT   \u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","mobile_breakpoint":"768","popup_html_agreed":"\u003Cdiv\u003E\n  \u003Cdiv class=\u0022popup-content agreed\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cp\u003EThank you for accepting...You can now hide this message or find out more about cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022hide-popup-button eu-cookie-compliance-hide-button\u0022\u003EHide\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button-thank-you\u0022 \u003EMore info\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/about-runtime-micro","popup_link_new_window":0,"popup_position":null,"fixed_top_position":false,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":0,"reload_page":0,"domain":"","domain_all_sites":null,"popup_eu_only_js":0,"cookie_lifetime":"10","cookie_session":false,"disagree_do_not_show_popup":0,"method":"default","allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","withdraw_enabled":false,"withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_name":"","cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","automatic_cookies_removal":true,"close_button_action":"close_banner"},"statistics":{"data":{"nid":"238"},"url":"\/modules\/statistics\/statistics.php"},"urlIsAjaxTrusted":{"\/Projects\/Arduino-Timer-Phase-Shifted-Square-Waves":true,"\/Projects\/Arduino-Timer-Phase-Shifted-Square-Waves?destination=node\/238":true},"antibot":{"forms":{"user-login-form":{"action":"\/Projects\/Arduino-Timer-Phase-Shifted-Square-Waves?destination=node\/238","key":"2d1379116de05898e27d9033859db912"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="/sites/all/themes/responsive_blog/js/html5.js"></script><![endif]-->
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-238 node-type-rtm-page white left-sidebar form-single-submit-processed eu-cookie-compliance-processed eu-cookie-compliance-status-null">
+    ﻿<div id="wrapper">
+  <header id="header" class="clearfix">
+          <hgroup id="site-name-wrap">
+        <span id="site-name"> 
+          <a href="https://runtimemicro.com/" title="Home">
+            Runtime Micro	
+					  </a><a href="https://runtimemicro.com/" title="Home">
+            <img id="site-logo-img" src="./Arduino Timer Phase-Shifted Square-Waves_files/Logo_Img_3.png" alt="Home">
+          </a>          
+       </span>
+		
+
+	  
+	  
+		
+         
+		
+      </hgroup>
+                      <div class="social-profile">
+        <ul>
+                                                 
+     
+          
+        </ul>
+      </div>
+        <nav id="navigation" role="navigation">
+      <div id="main-menu">
+        <ul class="menu l_tinynavNaN"><li class="first expanded"><a href="https://runtimemicro.com/" title="Main Page to Reach All Content">HOME</a><ul class="menu"><li class="first leaf"><a href="https://runtimemicro.com/About-Runtime-Micro" title="About RTM and Founder" rel="nofollow">ABOUT</a></li>
+<li class="leaf"><a href="https://runtimemicro.com/CONTACT" title="Form to Send Message to RTM Founder" rel="nofollow">CONTACT</a></li>
+<li class="last leaf"><a href="https://runtimemicro.com/sitemap" title="Orgqanized Links List to All RTM Content, Forums and Feeds..." rel="nofollow">SITE MAP</a></li>
+</ul></li>
+<li class="leaf"><a href="https://runtimemicro.com/PLANNING" title="Ideas and Suggestions for Planning a Micro Hobby Project">PLANNING</a></li>
+<li class="leaf"><a href="https://runtimemicro.com/construction" title="Ideas and Tactics for building Permanent Solderless projects...">CONSTRUCTION</a></li>
+<li class="expanded active-trail"><a href="https://runtimemicro.com/PROJECTS" title="PROJECTS" class="active-trail active">PROJECTS</a></li>
+<li class="last leaf"><a href="https://runtimemicro.com/Download">DOWNLOAD</a></li>
+</ul><select class="tinynav tinynavNaN"><option value="/">HOME</option><option value="/About-Runtime-Micro">&nbsp;&nbsp;ABOUT</option><option value="/CONTACT">&nbsp;&nbsp;CONTACT</option><option value="/sitemap">&nbsp;&nbsp;SITE MAP</option><option value="/PLANNING">PLANNING</option><option value="/construction">CONSTRUCTION</option><option value="/PROJECTS">PROJECTS</option><option value="/Download">DOWNLOAD</option></select>      </div>
+    </nav>
+  </header>
+
+  <div id="preface-area" class="clearfix">
+    
+     <!-- /.region -->
+  </div>
+
+  <div id="main" class="clearfix">
+    <div id="primary">
+      <section id="content" role="main">
+        
+        <div id="breadcrumbs"><nav class="breadcrumb"><a href="https://runtimemicro.com/">Home</a> » <a href="https://runtimemicro.com/PROJECTS" title="PROJECTS">PROJECTS</a></nav></div>                        <div id="content-wrap">
+                    <h1 class="page-title">Arduino Timer Phase-Shifted Square-Waves</h1>                                                  <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                        <span property="dc:title" content="Arduino Timer Phase-Shifted Square-Waves" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content">
+                  <div id="block-views-date-created-changed-block" class="block block-views">
+
+      
+  <div class="content">
+    <div class="view view-date-created-changed view-id-date_created_changed view-display-id-block view-dom-id-047c003e832474bd587cb1c58ccb7cde">
+        
+  
+  
+      <div class="view-content">
+      <table class="views-view-grid cols-1">
+  
+  <tbody>
+          <tr>
+                  <td class="inline-date-style">
+              
+  <span>    <span>Created: </span>    <span>Aug 11, 2022                 </span>  </span>      &nbsp;  
+  <span class="views-field views-field-timestamp">    <span class="views-label views-label-timestamp">Updated: </span>    <span class="field-content">May 29, 2024    </span>  </span>      &nbsp;  
+  <span class="views-field views-field-nothing">        <span class="field-content"><a rel="nofollow" href="https://runtimemicro.com/Projects/disclaimer-liability"><b>DISCLAIMER</b></a>
+</span>  </span>          </td>
+              </tr>
+      </tbody>
+</table>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+  
+</div> <!-- /.block -->                    <a href="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shifted-Square-Waves.jpg"><img typeof="foaf:Image" src="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shifted-Square-Waves.jpg" width="690" height="478" alt="Image shows 1000 Hz Phase-Shifted Square-Waves..." title="Sample Image of Phase-Shifted Square-Waves"></a>                    <p>Runtime adjustable Phase-Shifted Square-Waves can be generated using Arduino Uno, Nano and Mega2560. This article shows how with <u>Code and Schematic</u> below.</p>
+
+<blockquote>
+<p>Demo Video on YouTube is <strong><a href="http://youtu.be/GZuDAhtKyDw" rel="nofollow" title="Phase Shift Square Waves demo Video" type="MPEG-4 video"><u>here</u>.</a></strong></p>
+</blockquote>
+
+<p>The range of phase-shift adjustment spans Zero to 180 degrees. Timing is based on a resonator (or crystal) Clock -- making output quite stable. And being digital, you get excellent repeatability!</p>
+
+<p>Early versions of <u><a href="https://www.bing.com/search?q=RTM_TimerCalc" rel="nofollow" target="_blank" title="Advanced Arduino Timer Calculator">RTM_TimerCalc</a></u> allowed Users to adjust outputs (via GUI) across this phase range. The result from setup code was static, non-changing.</p>
+
+<p>However, I failed to check what happens if someone updates phase changes during run-time. Asynchronously changing a running Timer's OCR value will eventually cause outputs to flip or <em>invert phase --</em> a nasty result. This happened with RTM_TimerCalc code <u>prior</u> to version 1.40.</p>
+
+<p><a href="./Arduino Timer Phase-Shifted Square-Waves_files/Phase_Flipping.jpg"><img alt="Image shows Phase-Flip problem..." src="./Arduino Timer Phase-Shifted Square-Waves_files/Phase_Flipping.jpg" style="width: 400px; height: 286px;"></a></p>
+
+<p>After investigation, I removed Phase-Shifted Square-Waves from RTM_TimerCalc version 1.31. I saw no way to fix the problem. But, one day, a reddit User asked a question that got me thinking.</p>
+
+<h2>Why Runtime Phase-Flips Happen</h2>
+
+<p>What could cause a Timer square-wave to suddenly invert (flip polarity) from its assigned phase-angle? The answer is <u>loss of synchronization</u> when <em>changing </em>the angle. Its caused by&nbsp;the waveform-generator output staying HIGH after the OCR register gets changed. Because the output isn't cleared, the next compare event flips it 180 degrees from the desired angle.</p>
+
+<p>It was apparent wavegen outputs <em>must </em>be set LOW when changing phase angle. <em>So how </em>does one clear a stuck HIGH wavegen output? You can't write logic-zero to its mux-connected port-pin. It turns out Atmel included a clever way to get the job done.</p>
+
+<h2>Forced Output Compare Fix</h2>
+
+<p>The mysterious Forced Output Compare (<strong>FOC</strong>) bits in register-C can control wavegen outputs. You first set Compare register-bits for a needed match <u>action</u> and then force the match (Timer stopped).</p>
+
+<p><em>Writing Logic-1 </em>to any FOC bit causes a strobe-like event inside an associated waveform-generator. The <em>strobe </em>forces the target channel to immediately execute its compare-match <em>rule. </em>This produces a LOW -or- HIGH state at the wavegen output. Its as if a running Timer reached a compare-match.</p>
+
+<p>To set wavegen outputs LOW when performing a phase change, we must do as follows;</p>
+
+<dir>
+</dir>
+
+<dir>
+</dir>
+
+<ol>
+	<li>Stop the Timer</li>
+	<li>Change its OCR value as needed.</li>
+	<li>Set TCNT to zero.</li>
+	<li>* Set each channel's 2-bit Output-Compare field to the <em>rule which</em> causes outputs to go LOW (on a compare match).</li>
+	<li>* Force each channel's compare-match to Execute by strobing (writing 1 to) the associated FOC bits.</li>
+	<li>* Restore the 2-bit Ouput-Compare fields for Square Wave generation!</li>
+	<li>Enable Timer</li>
+</ol>
+
+<p>Now Timer phased-shifted square-waves stay predictable and behaved. There's no surprise or inverted result. You get exactly what you see on the display of RTM_TimerCalc. You'll see the same thing on PWM port-pins with an O-Scope.</p>
+
+<p><a href="https://runtimemicro.com/sites/default/files/Forum%20Images/Phase-Shift-Square-Waves-Arduino_0.gif"><img alt="Animation shows runtime phase-shifted square=waves in action..." src="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shift-Website.gif" style="width: 200px; height: 150px;" title="image/gif"></a></p>
+
+<p>By using these FOC register steps, you can dynamically adjust phase at run-time almost trouble-free. I say <u>almost</u> because the stop-start action imposed on the Timer can give your O-scope sync-jitters.</p>
+
+<h2>Phase-Shifted Square-Waves Project Build</h2>
+
+<p>So now Mode-12-CTC is back in RTM_TimerCalc v1.4. It calculates needed FOC code to keep phase-shifting stable.</p>
+
+<p>Before version release, I built a simple project on a single breadboard. It had a sticky-taped Uno, some push-buttons and&nbsp;header-pins to connect my Scope.&nbsp;Most connections&nbsp;used <a href="https://www.google.com/search?hl=en&amp;gbv=2&amp;biw=1267&amp;bih=525&amp;tbm=isch&amp;oq=&amp;aqs=&amp;q=Permanent-Solderless+wire-wrap" rel="nofollow" target="_blank"><u><font color="#000080">Permanent-Solderless</font></u></a> style wire-wrap -- see next image.</p>
+
+<p><a href="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shifted Square-Waves project Build.jpg"><img alt="Images shows Phase-Shift Square-Wave project using Arduino Uno..." src="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shifted Square-Waves project Build.jpg" style="width: 650px; height: 335px;"></a></p>
+
+<h2>Phase-Shifted Square-Waves Project Performance</h2>
+
+<p>Initially I used 1000 Hz to develop this example project. But a few Readers contacted me with concerns running at higher frequencies. I updated the Code to allow easy changes for higher ranges of operation. As frequency increases, so does phase-shift <u>step size</u>. It becomes necessary to slow the rate and size of phase increments. Otherwise it may <u>seem</u> you can only achieve min and max shift positions. The updated Code allows you to select a -range- and thus have a smoother experience.</p>
+
+<p>The following images reveal what waveforms look like at <span class="qtip-link qtip-instance-default qtip-processed" data-hasqtip="0">Ask</span>&nbsp;Frequencies of; 1000 Hz, 90 kHz and 900 kHz. My Rigol scope was allowed to auto-pick channel settings. Note the frequency readout. Compare to RTM_TimerCalc's <span class="qtip-link qtip-instance-default qtip-processed" data-hasqtip="1" aria-describedby="qtip-1">Actual</span>&nbsp;calculated frequency.</p>
+
+<p><a href="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shift-Square-Waves-1000-Hz.jpg"><img alt="Image shows Phase-Shift Square-Waves at 1000 Hz frequency..." src="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shift-Square-Waves-1000-Hz.jpg" style="width: 450px; height: 354px;"></a></p>
+
+<p><a href="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shift-Square-Waves-90-kHz.jpg"><img alt="Image shows Phase-Shifted Square-waves at 90 kHz Ask frequency..." src="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shift-Square-Waves-90-kHz.jpg" style="width: 450px; height: 353px;"></a></p>
+
+<p><a href="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shift-Square-Waves-900-kHz.jpg"><img alt="Image shows 900 kHz Phase-Shifted Square-Waves." src="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shift-Square-Waves-900-kHz.jpg" style="width: 450px; height: 351px;"></a></p>
+
+<h2>Phase-Shifted Square-Waves Code</h2>
+
+<p>The Sketch uses TimerCalc generated code in a <u>subroutine</u>. A passed parameter supplies a phase-argument to increase or decrease the OCR register. Then the Timer is stopped, OCR updated and FOC gymnastics performed. Finally the Timer is allowed to run with its new OCR value.</p>
+
+<p>This code runs fine on a Nano, Uno and 2560. Currently the sketch targets Nano/Uno.</p>
+
+<p>Here's the Arduino Sketch to duplicate my results.</p>
+
+<pre>// Example Nano/Uno Code from RuntimeMicro.com
+// runtime adjustable Phase-Shifted Square-Waves (1000 Hz)
+// NO PHASE FLIPS
+// Updated -- May 6, 2023
+
+//============ Frequency Change Constants ==================
+// Un-Comment only One line for the Phase-Chg size
+const unsigned int Phase_Chg_Const = 20;   // use for 100 Hz to 50 kHz range
+// const unsigned int Phase_Chg_Const = 2; // use for 50 kHz to 90 kHz range
+// const unsigned int Phase_Chg_Const = 1; // use for 90 kHz to 900 kHz range
+
+// Un-Comment only One line for the Loop-Delay-Constant
+const unsigned int Delay_Const = 20;    // use for 100 Hz to 50 kHz range
+//const unsigned int Delay_Const = 50;  // use for 50 kHz to 90 kHz range
+// const unsigned int Delay_Const = 75; // use for 90 kHz to 900 kHz range
+//================================================
+
+int button_Pin1 = A5; // Using ADC pins for buttons on my build
+int button_Pin2 = A3;
+
+int OCR_Result; // a calculation variable
+
+void Adjust_Phase(int Up_Down)
+{
+  // NOTE: This Subroutine causes Scope-Jitter when called (!!!)
+  // Use Normal Sync, not Auto -- may be tricky to adjust
+  // This routine is modified RTM_TimerCalc mode-12 CTC Code
+
+  TCCR1B = 0x18; // DISABLE Timer Clock
+  OCR_Result = OCR1B; // Copy current OCR value
+
+  // change Phase
+  OCR_Result += Up_Down; // add passed parameter
+ 
+  // Constrain
+  if (OCR_Result &lt; 1) OCR_Result = 1; // never less than 1
+  if (OCR_Result &gt; ICR1-1) OCR_Result = ICR1-1; // never &gt;= ICR
+  OCR1B = OCR_Result; // Pass back changed Phase value
+ 
+  TCNT1=0; // reset Counter
+  TCCR1A = 0xA0; // Set Compare-Match bit-fields for Clear-on-Match
+  TCCR1C = 0xC0; // Force Output Compares -- Clears Channel-AB Waveform Outputs!
+  TCCR1A = 0x50; // Set Compare Match bit-fields for Toggle-on-Match
+
+  TCCR1B |= 1; // Prescale=1, ENABLE Timer1 Clock
+}
+
+void setup()
+{
+  // PUSH BUTTON PINS -- Pins need Pulled-Up Inputs
+  pinMode(A5, INPUT_PULLUP); // Push-button_Pin1 ADC pin
+  pinMode(A3, INPUT_PULLUP); // Push-button_Pin2 ADC pin
+
+  // Timer-1 16-bit, Mode-12 CTC, Top=ICR
+  // 1,000 Hz Frequency, Clock is 16 MHz
+
+  TCCR1B = 0x18; // 0001 1000, Disable Timer
+  TCCR1A = 0x50; // 0101 0000
+
+  ICR1 = 8000-1; // Frequency Control, use TimerCalc to determine! &lt;&lt;******
+ 
+  OCR1A = 1; // never less than 1, never more than ICR1
+  OCR1B = 1; // both channels in phase, OCR's not using TimerCalc values
+  TCNT1=0x0;
+
+  TCCR1A = 0xA0; // FOC setup to clear Wavegen output flops
+  TCCR1C = 0xC0; // FOC strobe
+  TCCR1A = 0x50; // 0101 0000
+
+  // UNO-NANO Timer-1 Pins
+   pinMode(9, OUTPUT);  // OC1a
+   pinMode(10, OUTPUT); // OC1b
+
+  // 2560 Timer-1 Pins
+  // pinMode(11, OUTPUT); // OC1a
+  // pinMode(12, OUTPUT); // OC1b
+
+  TCCR1B |= 1; // Prescale=1, Enable Timer
+}
+
+void loop()
+{
+  int buttonState_1;
+  int buttonState_2;
+
+  // read state of pushbutton(s):
+  buttonState_1 = digitalRead(button_Pin1);
+  buttonState_2 = digitalRead(button_Pin2);
+
+  delay(Delay_Const); // PACE loop speed
+
+  // check if pushbutton pressed.
+  if (buttonState_1 == LOW) Adjust_Phase(-Phase_Chg_Const); // Decrease Phase Angle 
+  
+  // check if pushbutton pressed.
+  if (buttonState_2 == LOW)  Adjust_Phase(+Phase_Chg_Const); // Increase Phase Angle
+}</pre>
+
+<h2>Phase-Shifted Square-Waves Diagram</h2>
+
+<p>This wiring matches up with the previous code listing -- next image.</p>
+
+<p><a href="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shifter Schematic.jpg"><img alt="Image shows Phase-Shifted Square-Waves project schematic." src="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shifter Schematic.jpg" style="width: 650px; height: 436px;"></a></p>
+
+<h2>Phase-Shift Math for Arduino Nano, Uno and Mega2560</h2>
+
+<p>You might wonder how to calculate a specific phase-shift between output Channels. Its fairly easy once you realize shifts are relative to the Timer start count. In mode-12, the Timer starts at zero. But <u>zero causes problems</u> in output-compare registers! So a <u>tradeoff is use 1</u> for the lowest possible shift from the Timer start.</p>
+
+<p>There are more considerations like phase-shift <u>range</u>, shift <u>resolution</u> and calculating a specific shift <u>angle</u>. I've summarized what I think are proper formulas for making these calculations. Please see the following Image.</p>
+
+<p><a href="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shift-Square-Wave-Forumlas.jpg"><img alt="Image shows Phase-Shift calculation formulas." src="./Arduino Timer Phase-Shifted Square-Waves_files/Phase-Shift-Square-Wave-Forumlas.jpg" style="width: 500px; height: 368px;"></a></p>
+
+<h2>In Summary</h2>
+
+<p>Runtime adjustable Phase-Shifted Square-Waves can be generated using Arduino Nano, Uno and Mega2560. The 16-bit Timers give decent performance, range, repeatability and resolution. Once adjusted, Square-Wave output is as stable as the clock system itself.</p>
+
+<p>Earlier versions of RTM_TimerCalc <u>lacked</u> the FOC code which prevents the phase-flip flaw. Version 1.4 and later generate needed FOC code to ensure run-time phase-shift projects operate properly.</p>
+
+<p>Here's a <u><a href="https://www.youtube.com/watch?v=UAnTXTELnpo" rel="nofollow" title="Advanced Arduino Timer Calculator" type="MPEG-4 video">YouTube Video</a></u> showing many abilities and features of RTM_TimerCalc v1.4.</p>
+
+<p>Lee <img src="./Arduino Timer Phase-Shifted Square-Waves_files/smile.gif" alt="Smile" class="my-smiley"></p>
+                    <p><a href="https://runtimemicro.com/Projects/Arduino-Timer-Phase-Shifted-Square-Waves#">Back to Top</a></p>
+        </div>
+
+ 	    <footer>
+	    <!-- ?php print render($content['links']); ?-->
+	    </footer> 
+      
+   </div>
+  
+</div> <!-- /.block -->
+<div id="block-views-date-created-changed-block--2" class="block block-views">
+
+      
+  <div class="content">
+    <div class="view view-date-created-changed view-id-date_created_changed view-display-id-block view-dom-id-c43b10b6b188f6107f390e89c861aa84">
+        
+  
+  
+      <div class="view-content">
+      <table class="views-view-grid cols-1">
+  
+  <tbody>
+          <tr>
+                  <td class="inline-date-style">
+              
+  <span>    <span>Created: </span>    <span>Aug 11, 2022                 </span>  </span>      &nbsp;  
+  <span class="views-field views-field-timestamp">    <span class="views-label views-label-timestamp">Updated: </span>    <span class="field-content">May 29, 2024    </span>  </span>      &nbsp;  
+  <span class="views-field views-field-nothing">        <span class="field-content"><a rel="nofollow" href="https://runtimemicro.com/Projects/disclaimer-liability"><b>DISCLAIMER</b></a>
+</span>  </span>          </td>
+              </tr>
+      </tbody>
+</table>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+        </div>
+      </section> <!-- /#main -->
+    </div>
+
+          <aside id="sidebar" role="complementary">
+       <div class="region region-sidebar-first">
+  <div id="block-search-form" class="block block-search">
+
+      
+  <div class="content">
+    <form action="https://runtimemicro.com/Projects/Arduino-Timer-Phase-Shifted-Square-Waves" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-TEByZiMJKk4mWRTLyC-Kc_jUvCD98ocUD6KGtlLf7GU">
+<input type="hidden" name="form_id" value="search_block_form">
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+<div id="block-views-news-topics-block" class="block block-views">
+
+        <h3>Site News</h3>
+    
+  <div class="content">
+    <div class="view view-news-topics view-id-news_topics view-display-id-block view-dom-id-57cb3ba9a6d312852f4236a5a3ce634e">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div>        <span class="spaced-LinkDeal idNavMenuItem"><a href="https://runtimemicro.com/Forums/RTM_TimerCalc/News/90-Degree-PSPWM-Project-Published">90-Degree PSPWM Project Published</a></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div>        <span class="spaced-LinkDeal idNavMenuItem"><a href="https://runtimemicro.com/Forums/RTM_TimerCalc/News/Uno-Phase-Shift-PWM-Project-Published">Uno Phase Shift PWM Project Published</a></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div>        <span class="spaced-LinkDeal idNavMenuItem"><a href="https://runtimemicro.com/Forums/RTM_TimerCalc/News/Uno-Phase-Shift-PWM-Project-coming-soon">Uno Phase Shift PWM Project coming soon</a></span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even">
+      
+  <div>        <span class="spaced-LinkDeal idNavMenuItem"><a href="https://runtimemicro.com/Forums/RTM_Layout/News/RTM_Layout-V102-under-development">RTM_Layout V1.02 under development</a></span>  </div>  </div>
+  <div class="views-row views-row-5 views-row-odd views-row-last">
+      
+  <div>        <span class="spaced-LinkDeal idNavMenuItem"><a href="https://runtimemicro.com/Forums/RTM_TimerCalc/News/Phase-Shift-PWM-120-degree-Project-has-Updated-Code">Phase-Shift-PWM 120 degree Project has Updated Code</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+  
+</div> <!-- /.block -->
+<div id="block-system-navigation" class="block block-system block-menu">
+
+        <h3>Navigation</h3>
+    
+  <div class="content">
+    <ul class="menu"><li class="first leaf" id="NavMenuItem"><a href="https://runtimemicro.com/" title="Main page for Runtime-Micro">Home</a></li>
+<li class="leaf" id="NavMenuItem"><a href="https://runtimemicro.com/search" rel="nofollow">Search</a></li>
+<li class="collapsed" id="NavMenuItem"><a href="https://runtimemicro.com/forum" rel="nofollow">Forum</a></li>
+<li class="leaf" id="NavMenuItem"><a href="https://runtimemicro.com/PLANNING">Planning</a></li>
+<li class="leaf" id="NavMenuItem"><a href="https://runtimemicro.com/construction">Construction</a></li>
+<li class="leaf" id="NavMenuItem"><a href="https://runtimemicro.com/PROJECTS">Projects</a></li>
+<li class="leaf" id="NavMenuItem"><a href="https://runtimemicro.com/sitemap" title="Display a site map with RSS feeds." rel="nofollow">Sitemap</a></li>
+<li class="leaf" id="NavMenuItem"><a href="https://runtimemicro.com/About-Runtime-Micro" title="Info about this website and content..." rel="nofollow">About</a></li>
+<li class="last leaf" id="NavMenuItem"><a href="https://runtimemicro.com/CONTACT" rel="nofollow">Contact</a></li>
+</ul>  </div>
+  
+</div> <!-- /.block -->
+<noscript>
+  <style>form.antibot { display: none !important; }</style>
+  <div class="antibot-no-js antibot-message antibot-message-warning messages warning">
+    You must have JavaScript enabled to use this form.  </div>
+</noscript>
+<div id="block-user-login" class="block block-user">
+
+        <h3>User login</h3>
+    
+  <div class="content">
+    <form class="antibot" action="https://runtimemicro.com/Projects/Arduino-Timer-Phase-Shifted-Square-Waves?destination=node/238" method="post" id="user-login-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name">Username <span class="form-required" title="This field is required.">*</span></label>
+ <input type="text" id="edit-name" name="name" value="" size="15" maxlength="60" class="form-text required">
+</div>
+<div class="form-item form-type-password form-item-pass">
+  <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
+ <input type="password" id="edit-pass" name="pass" size="15" maxlength="128" class="form-text required">
+</div>
+<div class="item-list"><ul><li class="first"><a href="https://runtimemicro.com/user/register" title="Create a new user account.">Create new account</a></li>
+<li class="last"><a href="https://runtimemicro.com/user/password" title="Request new password via e-mail.">Request new password</a></li>
+</ul></div><input type="hidden" name="form_build_id" value="form-lLlug_MPm_ZGIxIiuYpeq8ZRqb9rRVHK2-Hyd4KjmXY">
+<input type="hidden" name="form_id" value="user_login_block">
+<input type="hidden" name="antibot_key" value="2d1379116de05898e27d9033859db912">
+<div class="form-actions form-wrapper" id="edit-actions--2"><input type="submit" id="edit-submit--2" name="op" value="Log in" class="form-submit"></div></div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </aside> 
+      </div>
+
+  <footer id="footer-bottom">
+    <div id="footer-area" class="clearfix">
+            
+          </div>
+
+    <div id="bottom" class="clearfix">
+      <div class="copyright">Copyright © 2024, <a href="https://runtimemicro.com/">Runtime Micro</a></div>
+      <div class="credit">IP logged: 84.239.47.77 </div>
+    </div>
+  </footer>
+
+</div>
+
+
+
+
+
+
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.eu_cookie_compliance_cookie_name = "";
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Arduino Timer Phase-Shifted Square-Waves_files/js__ueKxQ69Gt7uT5quqO7QmdGq-dufWgA9ux9pxJbsAzE.js.download"></script>
+
+<div id="qtip-1" class="qtip qtip-default  qtip-pos-tl" tracking="false" role="alert" aria-live="polite" aria-atomic="false" aria-describedby="qtip-1-content" aria-hidden="true" data-qtip-id="1" style="z-index: 15001;"><div class="qtip-tip" style="display: none;"><canvas></canvas></div><div class="qtip-content" id="qtip-1-content" aria-atomic="true"> Actual output frequency relative to Ask parameter in RTM_TimerCalc </div></div></body></html>
