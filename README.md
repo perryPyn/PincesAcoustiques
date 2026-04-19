@@ -45,7 +45,12 @@ Le contrôle de la phase se fait via les registres de comparaison :
 </p>
 
 ## 4. Analyse et Résultats
-
+J'ai commandé l'altitude de la bille en poussant la stabilité du système à ses limites :
+<p align="center">
+    <img src="assets/limite.png" height = 145>
+    <img src="assets/commande.png" width = 300>
+</p>
+On peut observer en orange la consigne d'altitude et en bleu l'altitude réelle obtenue grâce à un enregistrement vidéo et Tracker pour extraire les données. Pour ce système, on otient une vitesse maximale de 12.8 mm/s avec une erreur maximale de 0.39 mm.
 
 ## 5. Structure du Dépôt
 - `/src` : Firmware Arduino (gestion des registres et modulation).
