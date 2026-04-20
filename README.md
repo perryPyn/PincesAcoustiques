@@ -14,7 +14,9 @@ Le principe du piège repose sur la création d'ondes stationnaires et la géné
 
 ### Équations Fondamentales
 La force acoustique $F$ générée dérive du potentiel :
+
 $$F = -\nabla U$$
+
 $$U = K_1(|p|^2) - K_2(|p_x|^2 + |p_y|^2 + |p_z|^2)$$
 
 * $K_1, K_2$ : Constantes dépendant du volume de la bille et des masses volumiques (air vs polystyrène).
